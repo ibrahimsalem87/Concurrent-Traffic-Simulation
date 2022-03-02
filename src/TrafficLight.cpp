@@ -4,6 +4,7 @@
 
 /* Implementation of class "MessageQueue" */
 
+
 template <typename T>
 T MessageQueue<T>::receive()
 {
@@ -49,7 +50,7 @@ void TrafficLight::waitForGreen()
 
     while (true)
     {
-        if (_queue->receive() == TrafficLightPhase::green)
+        if (_queue.receive() == TrafficLightPhase::green)
         return;
     }
 }
@@ -80,7 +81,7 @@ void TrafficLight::cycleThroughPhases()
 
     std::random_device rnd;                      // obtain a random number from hardware
     std::mt19937 gen(rnd());                     // seed the generator
-    std::uniform_int_distribution<> distr(4, 6); // define the range
+    std::uniform_real_distribution<double> distr(4.0, 6.0); // define the range
     double rndDur = distr(gen);                  //
 
 
@@ -103,7 +104,7 @@ void TrafficLight::cycleThroughPhases()
             {
                 _currentPhase = red;
             }
-                _queue->send(std::move(_currentPhase));
+                _queue.send(std::move(_currentPhase));
 
 
             TimeStamp = std::chrono::system_clock::now();

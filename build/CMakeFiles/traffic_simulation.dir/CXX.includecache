@@ -6,41 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/ibrahim/vcs/Udacity_Workspace/Concurrent-Traffic-Simulation/src/Intersection.cpp
+/home/ibrahim/vcs/Udacity_Workspace/Concurrent-Traffic-Simulation/src/TrafficLight.cpp
 iostream
--
-thread
--
-chrono
--
-future
 -
 random
 -
-Street.h
-/home/ibrahim/vcs/Udacity_Workspace/Concurrent-Traffic-Simulation/src/Street.h
-Intersection.h
-/home/ibrahim/vcs/Udacity_Workspace/Concurrent-Traffic-Simulation/src/Intersection.h
-Vehicle.h
-/home/ibrahim/vcs/Udacity_Workspace/Concurrent-Traffic-Simulation/src/Vehicle.h
-
-/home/ibrahim/vcs/Udacity_Workspace/Concurrent-Traffic-Simulation/src/Intersection.h
-vector
--
-future
--
-mutex
--
-memory
--
-TrafficObject.h
-/home/ibrahim/vcs/Udacity_Workspace/Concurrent-Traffic-Simulation/src/TrafficObject.h
 TrafficLight.h
 /home/ibrahim/vcs/Udacity_Workspace/Concurrent-Traffic-Simulation/src/TrafficLight.h
-
-/home/ibrahim/vcs/Udacity_Workspace/Concurrent-Traffic-Simulation/src/Street.h
-TrafficObject.h
-/home/ibrahim/vcs/Udacity_Workspace/Concurrent-Traffic-Simulation/src/TrafficObject.h
 
 /home/ibrahim/vcs/Udacity_Workspace/Concurrent-Traffic-Simulation/src/TrafficLight.h
 mutex
@@ -59,8 +31,4 @@ thread
 -
 mutex
 -
-
-/home/ibrahim/vcs/Udacity_Workspace/Concurrent-Traffic-Simulation/src/Vehicle.h
-TrafficObject.h
-/home/ibrahim/vcs/Udacity_Workspace/Concurrent-Traffic-Simulation/src/TrafficObject.h
 
