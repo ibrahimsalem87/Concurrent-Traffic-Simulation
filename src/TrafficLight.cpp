@@ -26,7 +26,8 @@ void MessageQueue<T>::send(T &&msg)
     // as well as _condition.notify_one() to add a new message to the queue and afterwards send a notification.
 
     std::lock_guard<std::mutex> lck(_mutex);
-    _queue.push_back(msg);
+    _queue.clear();
+    _queue.emplace_back(msg);
     _condition.notify_one();
 }
 
@@ -81,8 +82,9 @@ void TrafficLight::cycleThroughPhases()
 
     std::random_device rnd;                      // obtain a random number from hardware
     std::mt19937 gen(rnd());                     // seed the generator
-    std::uniform_real_distribution<double> distr(4.0, 6.0); // define the range
+    std::uniform_real_distribution<double> distr(4000, 6000); // define the range
     double rndDur = distr(gen);                  //
+    double timeSinceLastUpdate;
 
 
     // init stop watch
@@ -91,7 +93,7 @@ void TrafficLight::cycleThroughPhases()
     {
         std::this_thread::sleep_for(std::chrono::milliseconds(1));
 
-        double timeSinceLastUpdate = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - TimeStamp).count();
+        timeSinceLastUpdate = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - TimeStamp).count();
 
         if (timeSinceLastUpdate >= rndDur)
         {
